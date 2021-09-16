@@ -1,0 +1,98 @@
+.header{
+    border: 1px solid $black;
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background-color: $black;
+
+        .nav-logo{
+            font-size: 2.1rem;
+            font-weight: 500;
+            color: $red;
+            text-transform: uppercase;
+
+            @media only screen and (max-width: 768px){
+                text-align: center;
+            }
+        }
+
+        .hamburger{
+            display: none;
+
+            @media only screen and (max-width: 768px){
+                display: block;
+                cursor: pointer;
+
+                &.active{
+
+                    .bar{
+                        &:nth-child(2){
+                            opacity: 0;
+                        }
+    
+                        &:nth-child(1){
+                            transform: translateY(8px) rotate(45deg);
+                        }
+
+                        &:nth-child(3){
+                            transform: translateY(-8px) rotate(-45deg);
+                        }
+                    }
+                }
+            }
+
+            .bar{
+                display: block;
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                background-color: #fff;
+            }
+        }
+
+        .nav-menu{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @media only screen and (max-width: 768px){
+                position: fixed;
+                left: -100%;
+                top: 5rem;
+                flex-direction: column;
+                background-color: $black;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+
+                &.active{
+                    left: 0;
+                }
+            }
+
+            .nav-item{
+                margin-left: 5rem;
+
+                @media only screen and (max-width: 768px){
+                    margin: 2.5rem 0;
+                }
+
+                .nav-link{
+                    font-size: 1.6rem;
+                    font-weight: 400;
+                    color: #fff;
+                    text-transform: uppercase;
+
+                    &:hover{
+                        color: #482ff7;
+                    }
+                }
+            }
+        }
+    }
+}
